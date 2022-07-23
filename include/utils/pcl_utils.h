@@ -44,8 +44,9 @@ struct PointXYZIT {
 } EIGEN_ALIGN16;
 
 struct PointXYZIRT {
-    PCL_ADD_POINT4D
-    PCL_ADD_INTENSITY;
+    PCL_ADD_POINT4D;
+    uint8 intensity;
+    // PCL_ADD_INTENSITY;
     std::uint16_t ring;
     double timestamp;
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
@@ -67,7 +68,8 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(licalib::PointXYZIT,
                                   (float, x, x)
                                   (float, y, y)
                                   (float, z, z)
-                                  (float, intensity, intensity)
+                                  // (float, intensity, intensity)
+                                  (uint8, intensity, intensity)
                                   (double, timestamp, timestamp))
 
 POINT_CLOUD_REGISTER_POINT_STRUCT(licalib::PointXYZIRT, 
